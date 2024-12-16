@@ -1,0 +1,96 @@
+@use 'font';
+
+body {
+  user-select: none;
+};
+
+header {
+  // margin-top: -11.5%;
+  display: flex;
+  position: absolute;
+  z-index: 100;
+  
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+main {
+  z-index: -100;
+}
+
+footer {
+  z-index: 0;
+}
+
+.bg {
+  &__black {
+    background: #000;
+  }
+  &__imageSet_1 {
+    position: absolute;  // 背景画像を固定するために絶対位置を使用
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(/img/pexels-mateusz-dach-99805-320335.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1000;
+    // @extend .blur
+  };
+};
+
+.blur {
+  &__1 {
+    filter: blur(5px);
+    animation: blur 2s linear forwards;
+  }
+  &__2 {
+    filter: blur(2px);
+    animation: blur 1.2s linear forwards;
+  }
+};
+
+@keyframes blur {
+  100% {
+    filter: blur(0);
+  }
+};
+
+.title {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  // justify-content: flex-start;
+  // height: 100vh;
+  margin-top: 12%;
+
+  &__slant {
+    position: relative;
+    width: 0px;
+    height: 118px;
+    &::after {
+      content: "";
+      top: 22px;
+      left: 12px;
+      position: absolute;
+      width: 5px;
+      height: 92px;
+      background: #fff;
+      transform: skewX(-26.2deg);
+    }
+  };
+
+  &__text {
+    @extend .font__poiretOne;
+    @extend .font-color__white;
+
+    font-size: 118px;
+    // font-style: italic;
+    text-align: center;
+    
+    // margin-top: 12%;
+  };
+};

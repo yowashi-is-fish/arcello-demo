@@ -1,0 +1,44 @@
+// loader
+
+#loader {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.fadeout {
+  &__1 {
+    animation: fadeOut 2s, changeColor 2s;
+    animation-fill-mode: both;
+  }
+  &__2 {
+    animation: fadeOut 0.1s;
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; /*初めに存在する*/
+    display: block;
+  }
+  100% {
+    opacity: 0; /*最後に消える*/
+    z-index: -9999;
+    display: none;
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    background: #111;
+  }
+  100% {
+    background: #000
+  }
+}
