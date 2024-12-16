@@ -1,0 +1,18 @@
+// フォントとか文字色の指定とするcss
+
+@font-face {
+  font-family: 'PoiretOne-Regular';
+  src: url(/fonts/PoiretOne-Regular.ttf);
+};
+
+.font {
+  &__poiretOne {
+    font-family: PoiretOne-Regular;
+  };
+};
+
+.font-color {
+  &__white {
+    color: #fff
+  };
+};
